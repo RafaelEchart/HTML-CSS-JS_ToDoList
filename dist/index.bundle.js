@@ -2,6 +2,192 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/completed.js":
+/*!**************************!*\
+  !*** ./src/completed.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./src/index.js");
+/* eslint-disable import/no-cycle */
+
+var clearButton = document.getElementById('clear');
+
+var taskCompleted = function taskCompleted(id, checked) {
+  var taskSelected = document.getElementById("task-".concat(id));
+
+  if (checked) {
+    taskSelected.style.textDecoration = 'line-through';
+    taskSelected.style.color = 'gray';
+    _index_js__WEBPACK_IMPORTED_MODULE_0__.ToDoList.forEach(function (task) {
+      if (task.index === id) {
+        task.completed = true;
+      }
+    });
+  } else {
+    taskSelected.style.textDecoration = 'none';
+    taskSelected.style.color = 'black';
+    _index_js__WEBPACK_IMPORTED_MODULE_0__.ToDoList.forEach(function (task) {
+      if (task.index === id) {
+        task.completed = false;
+      }
+    });
+  }
+
+  localStorage.setItem('tasks', JSON.stringify(_index_js__WEBPACK_IMPORTED_MODULE_0__.ToDoList));
+  var checkCompleted = _index_js__WEBPACK_IMPORTED_MODULE_0__.ToDoList.filter(function (task) {
+    return task.completed === true;
+  });
+
+  if (checkCompleted.length) {
+    clearButton.classList.remove('clear-notActive');
+    clearButton.classList.add('clear-active');
+  } else {
+    clearButton.classList.remove('clear-active');
+    clearButton.classList.add('clear-notActive');
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (taskCompleted);
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ToDoList": () => (/* binding */ ToDoList),
+/* harmony export */   "completedTasksCount": () => (/* binding */ completedTasksCount)
+/* harmony export */ });
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
+/* harmony import */ var _completed_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./completed.js */ "./src/completed.js");
+/* eslint-disable import/no-mutable-exports */
+
+/* eslint-disable import/no-cycle */
+
+
+var input = document.getElementById('addNewInput');
+var icon = document.getElementById('addNewIcon');
+var taskContainer = document.getElementById('tasks');
+var clearButton = document.getElementById('clear');
+var ToDoList = [];
+var completedTasksCount = 0;
+
+var maxIdValue = function maxIdValue(ToDoList) {
+  var ids = ToDoList.map(function (task) {
+    return task.index;
+  });
+  var sorted = ids.sort(function (a, b) {
+    return a - b;
+  });
+  return sorted[sorted.length - 1] + 1;
+};
+
+var addTaskToList = function addTaskToList() {
+  var validation = input.classList;
+  var id;
+
+  if (ToDoList.length) {
+    id = maxIdValue(ToDoList);
+  } else {
+    id = 0;
+  }
+
+  if (input.value.length) {
+    validation.remove('errorInput');
+    validation.add('new-input');
+    var newTask = "<div class=\"section\" id=\"".concat(id, "\">\n    <div class=\"checkbox\">\n      <input type=\"checkbox\" id=\"checkbox-").concat(id, "\"/>\n      <span id=\"task-").concat(id, "\">").concat(input.value, "</span>\n    </div>\n    <ion-icon name=\"ellipsis-vertical-outline\" class=\"icon\"></ion-icon>\n  </div>");
+    taskContainer.insertAdjacentHTML('beforeend', newTask);
+    var checkbox = document.getElementById("checkbox-".concat(id));
+    checkbox.addEventListener('change', function listener() {
+      (0,_completed_js__WEBPACK_IMPORTED_MODULE_1__["default"])(id, this.checked);
+    });
+    ToDoList.push({
+      index: id,
+      description: input.value,
+      completed: false
+    });
+    localStorage.setItem('tasks', JSON.stringify(ToDoList));
+    input.value = '';
+    clearButton.style.display = 'flex';
+  } else {
+    validation.remove('new-input');
+    validation.add('errorInput');
+  }
+};
+
+var removeTaskFromList = function removeTaskFromList() {
+  var checkCompleted = ToDoList.filter(function (task) {
+    return task.completed === true;
+  });
+
+  if (checkCompleted.length) {
+    for (var i = 0; i < checkCompleted.length; i += 1) {
+      if (checkCompleted[i].completed) {
+        document.getElementById(checkCompleted[i].index).remove();
+      }
+    }
+
+    ToDoList = ToDoList.filter(function (task) {
+      return task.completed === false;
+    });
+    localStorage.setItem('tasks', JSON.stringify(ToDoList));
+    clearButton.classList.remove('clear-active');
+    clearButton.classList.add('clear-notActive');
+  }
+};
+
+window.onload = function () {
+  var readyToClear = false;
+  input.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+      addTaskToList();
+    }
+  });
+  icon.addEventListener('click', addTaskToList);
+  clearButton.addEventListener('click', removeTaskFromList);
+  var savedTasks = JSON.parse(localStorage.getItem('tasks'));
+
+  if (savedTasks && savedTasks.length) {
+    clearButton.style.display = 'flex';
+    ToDoList = savedTasks;
+
+    var _loop = function _loop(i) {
+      var newTask = "<div class=\"section\" id=\"".concat(savedTasks[i].index, "\">\n        <div class=\"checkbox\">\n          <input  ").concat(savedTasks[i].completed ? 'checked' : '', " type=\"checkbox\" id=\"checkbox-").concat(savedTasks[i].index, "\" />\n          <span  ").concat(savedTasks[i].completed ? "style='text-decoration: line-through; color: gray'" : '', " id=\"task-").concat(savedTasks[i].index, "\">").concat(savedTasks[i].description, "</span>\n        </div>\n        <ion-icon name=\"ellipsis-vertical-outline\" class=\"icon\"></ion-icon>\n      </div>");
+      taskContainer.insertAdjacentHTML('beforeend', newTask);
+      var checkbox = document.getElementById("checkbox-".concat(savedTasks[i].index));
+      checkbox.addEventListener('change', function listener() {
+        (0,_completed_js__WEBPACK_IMPORTED_MODULE_1__["default"])(savedTasks[i].index, this.checked);
+      });
+
+      if (savedTasks[i].completed) {
+        readyToClear = true;
+      }
+    };
+
+    for (var i = 0; i < savedTasks.length; i += 1) {
+      _loop(i);
+    }
+
+    if (readyToClear) {
+      clearButton.classList.remove('clear-notActive');
+      clearButton.classList.add('clear-active');
+    }
+  }
+};
+
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/style.css":
 /*!*************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
@@ -598,171 +784,12 @@ module.exports = styleTagTransform;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
-
-
-const input = document.getElementById('addNewInput');
-const icon = document.getElementById('addNewIcon');
-const taskContainer = document.getElementById('tasks');
-const clearButton = document.getElementById('clear');
-
-let ToDoList = [];
-let completedTasksCount = 0;
-
-const taskCompleted = (id, checked) => {
-  const taskSelected = document.getElementById(`task-${id}`);
-
-  if (checked) {
-    taskSelected.style.textDecoration = 'line-through';
-    taskSelected.style.color = 'gray';
-    ToDoList.forEach((task) => {
-      if (task.index === id) {
-        task.completed = true;
-      }
-    });
-    completedTasksCount += 1;
-  } else {
-    taskSelected.style.textDecoration = 'none';
-    taskSelected.style.color = 'black';
-    ToDoList.forEach((task) => {
-      if (task.index === id) {
-        task.completed = false;
-      }
-    });
-    completedTasksCount -= 1;
-  }
-  localStorage.setItem('tasks', JSON.stringify(ToDoList));
-
-  if (completedTasksCount > 0) {
-    clearButton.classList.remove('clear-notActive');
-    clearButton.classList.add('clear-active');
-  } else {
-    clearButton.classList.remove('clear-active');
-    clearButton.classList.add('clear-notActive');
-  }
-};
-
-const maxIdValue = (ToDoList) => {
-  const ids = ToDoList.map((task) => task.index);
-  const sorted = ids.sort((a, b) => a - b);
-  return sorted[sorted.length - 1] + 1;
-};
-
-const addTaskToList = () => {
-  const validation = input.classList;
-  let id;
-  if (ToDoList.length) {
-    id = maxIdValue(ToDoList);
-  } else {
-    id = 0;
-  }
-
-  if (input.value.length) {
-    validation.remove('errorInput');
-    validation.add('new-input');
-
-    const newTask = `<div class="section" id="${id}">
-    <div class="checkbox">
-      <input type="checkbox" id="checkbox-${id}"/>
-      <span id="task-${id}">${input.value}</span>
-    </div>
-    <ion-icon name="ellipsis-vertical-outline" class="icon"></ion-icon>
-  </div>`;
-
-    taskContainer.insertAdjacentHTML('beforeend', newTask);
-
-    const checkbox = document.getElementById(`checkbox-${id}`);
-    checkbox.addEventListener('change', function listener() {
-      taskCompleted(id, this.checked);
-    });
-
-    ToDoList.push({
-      index: id,
-      description: input.value,
-      completed: false,
-    });
-
-    localStorage.setItem('tasks', JSON.stringify(ToDoList));
-
-    input.value = '';
-    clearButton.style.display = 'flex';
-  } else {
-    validation.remove('new-input');
-    validation.add('errorInput');
-  }
-};
-
-const removeTaskFromList = () => {
-  if (completedTasksCount > 0) {
-    for (let i = 0; i < ToDoList.length; i += 1) {
-      if (ToDoList[i].completed) {
-        document.getElementById(ToDoList[i].index).remove();
-      }
-    }
-
-    ToDoList = ToDoList.filter((task) => task.completed === false);
-    localStorage.setItem('tasks', JSON.stringify(ToDoList));
-    clearButton.classList.remove('clear-active');
-    clearButton.classList.add('clear-notActive');
-
-    clearButton.classList.remove('clear-active');
-    clearButton.classList.add('clear-notActive');
-    clearButton.style.display = 'none';
-  }
-};
-
-window.onload = () => {
-  input.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-      addTaskToList();
-    }
-  });
-
-  icon.addEventListener('click', addTaskToList);
-
-  clearButton.addEventListener('click', removeTaskFromList);
-
-  const savedTasks = JSON.parse(localStorage.getItem('tasks'));
-
-  if (savedTasks && savedTasks.length) {
-    clearButton.style.display = 'flex';
-
-    ToDoList = savedTasks;
-    for (let i = 0; i < savedTasks.length; i += 1) {
-      const newTask = `<div class="section" id="${savedTasks[i].index}">
-        <div class="checkbox">
-          <input  ${savedTasks[i].completed ? 'checked' : ''} type="checkbox" id="checkbox-${savedTasks[i].index}" />
-          <span  ${savedTasks[i].completed ? "style='text-decoration: line-through; color: gray'" : ''} id="task-${savedTasks[i].index}">${savedTasks[i].description}</span>
-        </div>
-        <ion-icon name="ellipsis-vertical-outline" class="icon"></ion-icon>
-      </div>`;
-
-      taskContainer.insertAdjacentHTML('beforeend', newTask);
-
-      const checkbox = document.getElementById(`checkbox-${savedTasks[i].index}`);
-      checkbox.addEventListener('change', function listener() {
-        taskCompleted(savedTasks[i].index, this.checked);
-      });
-
-      if (savedTasks[i].completed) {
-        completedTasksCount += 1;
-      }
-    }
-    if (completedTasksCount > 0) {
-      clearButton.classList.remove('clear-notActive');
-      clearButton.classList.add('clear-active');
-    }
-  }
-};
-})();
-
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
+/******/ 	
 /******/ })()
 ;
 //# sourceMappingURL=index.bundle.js.map
