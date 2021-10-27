@@ -1,65 +1,84 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# To Do List Feature
 
-> One paragraph statement about the project.
+> in this project I used ES6 syntax and Webpack to speed up the development process, this feature allows you to add To Do Tasks and keep track of the completed ones, works on all devices. 
+
 
 ![screenshot](./src/README/app_screenshot.png)
 
-Additional description about the project and its features.
-
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML & CSS & Javascript
+- Webpack and Webpack-dev-server
+- Linters: Stylelint and Eslint
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://rafaelechart.github.io/ToDoList/)
 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- Node js installed
+- Visual Studio Code (or any other code editor)
+- Terminal
+- Browser of your preference
+
 ### Setup
+
+- git clone https://github.com/RafaelEchart/ToDoList.git
+- cd ToDoList
 
 ### Install
 
+Inside of your directory run the following commands:
+
+- npm install 
+- npm run build
+- npm run start
+
 ### Usage
+
+- Open your browser in http://localhost:8080/ or the port that says the CLI
+
+![localhost](./src/README/localhost.png)
+
+
+
+### How to edit
+
+If you wish to edit this project you need to run the following command too:
+
+- npm watch
+
+This will allow you to see a hot refresh in the browser when your HTML changes. 
 
 ### Run tests
 
-### Deployment
+- Check that all the tests are correctly passed🤝
 
+### Merge
+
+- Merge it with your main branch so we can all see your work!!🤝
 
 
 ## Authors
 
-👤 **Author1**
+👤 **Rafael Echart**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@rafaelechart](https://github.com/rafaelechart)
+- Twitter: [@rafaechart](https://twitter.com/rafaechart)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
 
 ## Show your support
 
@@ -67,9 +86,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Rafael Echart⭐️
+- Microverse documentation ⭐️
 
 ## 📝 License
 

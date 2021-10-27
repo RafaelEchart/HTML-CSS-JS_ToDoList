@@ -1,45 +1,15 @@
+/* eslint-disable import/no-cycle */
 import './style.css';
+import taskCompleted from './completed';
 
 const input = document.getElementById('addNewInput');
 const icon = document.getElementById('addNewIcon');
 const taskContainer = document.getElementById('tasks');
 const clearButton = document.getElementById('clear');
 
+/* eslint-disable import/no-mutable-exports */
 let ToDoList = [];
-let completedTasksCount = 0;
-
-const taskCompleted = (id, checked) => {
-  const taskSelected = document.getElementById(`task-${id}`);
-
-  if (checked) {
-    taskSelected.style.textDecoration = 'line-through';
-    taskSelected.style.color = 'gray';
-    ToDoList.forEach((task) => {
-      if (task.index === id) {
-        task.completed = true;
-      }
-    });
-    completedTasksCount += 1;
-  } else {
-    taskSelected.style.textDecoration = 'none';
-    taskSelected.style.color = 'black';
-    ToDoList.forEach((task) => {
-      if (task.index === id) {
-        task.completed = false;
-      }
-    });
-    completedTasksCount -= 1;
-  }
-  localStorage.setItem('tasks', JSON.stringify(ToDoList));
-
-  if (completedTasksCount > 0) {
-    clearButton.classList.remove('clear-notActive');
-    clearButton.classList.add('clear-active');
-  } else {
-    clearButton.classList.remove('clear-active');
-    clearButton.classList.add('clear-notActive');
-  }
-};
+const completedTasksCount = 0;
 
 const maxIdValue = (ToDoList) => {
   const ids = ToDoList.map((task) => task.index);
@@ -92,10 +62,12 @@ const addTaskToList = () => {
 };
 
 const removeTaskFromList = () => {
-  if (completedTasksCount > 0) {
-    for (let i = 0; i < ToDoList.length; i += 1) {
-      if (ToDoList[i].completed) {
-        document.getElementById(ToDoList[i].index).remove();
+  const checkCompleted = ToDoList.filter((task) => task.completed === true);
+
+  if (checkCompleted.length) {
+    for (let i = 0; i < checkCompleted.length; i += 1) {
+      if (checkCompleted[i].completed) {
+        document.getElementById(checkCompleted[i].index).remove();
       }
     }
 
@@ -103,14 +75,11 @@ const removeTaskFromList = () => {
     localStorage.setItem('tasks', JSON.stringify(ToDoList));
     clearButton.classList.remove('clear-active');
     clearButton.classList.add('clear-notActive');
-
-    clearButton.classList.remove('clear-active');
-    clearButton.classList.add('clear-notActive');
-    clearButton.style.display = 'none';
   }
 };
 
 window.onload = () => {
+  let readyToClear = false;
   input.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
       addTaskToList();
@@ -144,12 +113,14 @@ window.onload = () => {
       });
 
       if (savedTasks[i].completed) {
-        completedTasksCount += 1;
+        readyToClear = true;
       }
     }
-    if (completedTasksCount > 0) {
+    if (readyToClear) {
       clearButton.classList.remove('clear-notActive');
       clearButton.classList.add('clear-active');
     }
   }
 };
+
+export { ToDoList, completedTasksCount };
