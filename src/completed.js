@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 /* eslint-disable import/no-cycle */
 import { ToDoList } from './index';
 

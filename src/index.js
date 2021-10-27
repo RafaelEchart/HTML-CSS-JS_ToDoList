@@ -1,5 +1,3 @@
-/* eslint-disable import/no-mutable-exports */
-/* eslint-disable import/extensions */
 /* eslint-disable import/no-cycle */
 import './style.css';
 import taskCompleted from './completed';
@@ -9,6 +7,7 @@ const icon = document.getElementById('addNewIcon');
 const taskContainer = document.getElementById('tasks');
 const clearButton = document.getElementById('clear');
 
+/* eslint-disable import/no-mutable-exports */
 let ToDoList = [];
 const completedTasksCount = 0;
 
