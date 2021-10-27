@@ -1,1 +1,5 @@
+.eslintrc.json
 node_modules
+.hintrc
+.stylelintrc.json
+.vscode/
