@@ -15,11 +15,13 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "Setup webpack",
+      template: './src/index.html'
     }),
   ],
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
+    clean: true,
   },
 
   module: {
