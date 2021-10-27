@@ -1,7 +1,8 @@
 /* eslint-disable import/no-mutable-exports */
+/* eslint-disable import/extensions */
 /* eslint-disable import/no-cycle */
 import './style.css';
-import taskCompleted from './completed.js';
+import taskCompleted from './completed';
 
 const input = document.getElementById('addNewInput');
 const icon = document.getElementById('addNewIcon');
