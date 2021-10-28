@@ -2,6 +2,36 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/ToDoList.js":
+/*!*************************!*\
+  !*** ./src/ToDoList.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var ToDoList = {
+  task: [],
+
+  get currentTasks() {
+    return this.task;
+  },
+
+  set updateTasks(newTask) {
+    this.task.push(newTask);
+  },
+
+  set newArray(array) {
+    this.task = array;
+  }
+
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ToDoList);
+
+/***/ }),
+
 /***/ "./src/completed.js":
 /*!**************************!*\
   !*** ./src/completed.js ***!
@@ -12,34 +42,56 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ "./src/index.js");
+/* harmony import */ var _ToDoList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ToDoList */ "./src/ToDoList.js");
 /* eslint-disable import/no-cycle */
 
 var clearButton = document.getElementById('clear');
 
 var taskCompleted = function taskCompleted(id, checked) {
   var taskSelected = document.getElementById("task-".concat(id));
+  var tasks = _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].currentTasks;
+  var newArrayOfTasks = [];
 
   if (checked) {
     taskSelected.style.textDecoration = 'line-through';
-    taskSelected.style.color = 'gray';
-    _index__WEBPACK_IMPORTED_MODULE_0__.ToDoList.forEach(function (task) {
-      if (task.index === id) {
-        task.completed = true;
+    taskSelected.style.color = 'gray'; // ToDoList.currentTasks.forEach((task) => {
+    //   if (task.index === id) {
+    //     task.completed = true;
+    //   }
+    // });
+
+    for (var i = 0; i < tasks.length; i += 1) {
+      if (tasks[i].index === id) {
+        tasks[i].completed = true;
+        newArrayOfTasks.push(tasks[i]);
+      } else {
+        newArrayOfTasks.push(tasks[i]);
       }
-    });
+    }
+
+    _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].newArray(newArrayOfTasks);
   } else {
     taskSelected.style.textDecoration = 'none';
-    taskSelected.style.color = 'black';
-    _index__WEBPACK_IMPORTED_MODULE_0__.ToDoList.forEach(function (task) {
-      if (task.index === id) {
-        task.completed = false;
+    taskSelected.style.color = 'black'; // ToDoList.forEach((task) => {
+    //   if (task.index === id) {
+    //     task.completed = false;
+    //   }
+    // });
+
+    for (var _i = 0; _i < tasks.length; _i += 1) {
+      if (tasks[_i].index === id) {
+        tasks[_i].completed = true;
+        newArrayOfTasks.push(tasks[_i]);
+      } else {
+        newArrayOfTasks.push(tasks[_i]);
       }
-    });
+    }
+
+    _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].newArray(newArrayOfTasks);
   }
 
-  localStorage.setItem('tasks', JSON.stringify(_index__WEBPACK_IMPORTED_MODULE_0__.ToDoList));
-  var checkCompleted = _index__WEBPACK_IMPORTED_MODULE_0__.ToDoList.filter(function (task) {
+  localStorage.setItem('tasks', JSON.stringify(_ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].currentTasks));
+  var checkCompleted = _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].currentTasks.filter(function (task) {
     return task.completed === true;
   });
 
@@ -53,138 +105,6 @@ var taskCompleted = function taskCompleted(id, checked) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (taskCompleted);
-
-/***/ }),
-
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ToDoList": () => (/* binding */ ToDoList),
-/* harmony export */   "completedTasksCount": () => (/* binding */ completedTasksCount)
-/* harmony export */ });
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
-/* harmony import */ var _completed__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./completed */ "./src/completed.js");
-/* eslint-disable import/no-cycle */
-
-
-var input = document.getElementById('addNewInput');
-var icon = document.getElementById('addNewIcon');
-var taskContainer = document.getElementById('tasks');
-var clearButton = document.getElementById('clear');
-/* eslint-disable import/no-mutable-exports */
-
-var ToDoList = [];
-var completedTasksCount = 0;
-
-var maxIdValue = function maxIdValue(ToDoList) {
-  var ids = ToDoList.map(function (task) {
-    return task.index;
-  });
-  var sorted = ids.sort(function (a, b) {
-    return a - b;
-  });
-  return sorted[sorted.length - 1] + 1;
-};
-
-var addTaskToList = function addTaskToList() {
-  var validation = input.classList;
-  var id;
-
-  if (ToDoList.length) {
-    id = maxIdValue(ToDoList);
-  } else {
-    id = 0;
-  }
-
-  if (input.value.length) {
-    validation.remove('errorInput');
-    validation.add('new-input');
-    var newTask = "<div class=\"section\" id=\"".concat(id, "\">\n    <div class=\"checkbox\">\n      <input type=\"checkbox\" id=\"checkbox-").concat(id, "\"/>\n      <span id=\"task-").concat(id, "\">").concat(input.value, "</span>\n    </div>\n    <ion-icon name=\"ellipsis-vertical-outline\" class=\"icon\"></ion-icon>\n  </div>");
-    taskContainer.insertAdjacentHTML('beforeend', newTask);
-    var checkbox = document.getElementById("checkbox-".concat(id));
-    checkbox.addEventListener('change', function listener() {
-      (0,_completed__WEBPACK_IMPORTED_MODULE_1__["default"])(id, this.checked);
-    });
-    ToDoList.push({
-      index: id,
-      description: input.value,
-      completed: false
-    });
-    localStorage.setItem('tasks', JSON.stringify(ToDoList));
-    input.value = '';
-    clearButton.style.display = 'flex';
-  } else {
-    validation.remove('new-input');
-    validation.add('errorInput');
-  }
-};
-
-var removeTaskFromList = function removeTaskFromList() {
-  var checkCompleted = ToDoList.filter(function (task) {
-    return task.completed === true;
-  });
-
-  if (checkCompleted.length) {
-    for (var i = 0; i < checkCompleted.length; i += 1) {
-      if (checkCompleted[i].completed) {
-        document.getElementById(checkCompleted[i].index).remove();
-      }
-    }
-
-    ToDoList = ToDoList.filter(function (task) {
-      return task.completed === false;
-    });
-    localStorage.setItem('tasks', JSON.stringify(ToDoList));
-    clearButton.classList.remove('clear-active');
-    clearButton.classList.add('clear-notActive');
-  }
-};
-
-window.onload = function () {
-  var readyToClear = false;
-  input.addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') {
-      addTaskToList();
-    }
-  });
-  icon.addEventListener('click', addTaskToList);
-  clearButton.addEventListener('click', removeTaskFromList);
-  var savedTasks = JSON.parse(localStorage.getItem('tasks'));
-
-  if (savedTasks && savedTasks.length) {
-    clearButton.style.display = 'flex';
-    ToDoList = savedTasks;
-
-    var _loop = function _loop(i) {
-      var newTask = "<div class=\"section\" id=\"".concat(savedTasks[i].index, "\">\n        <div class=\"checkbox\">\n          <input  ").concat(savedTasks[i].completed ? 'checked' : '', " type=\"checkbox\" id=\"checkbox-").concat(savedTasks[i].index, "\" />\n          <span  ").concat(savedTasks[i].completed ? "style='text-decoration: line-through; color: gray'" : '', " id=\"task-").concat(savedTasks[i].index, "\">").concat(savedTasks[i].description, "</span>\n        </div>\n        <ion-icon name=\"ellipsis-vertical-outline\" class=\"icon\"></ion-icon>\n      </div>");
-      taskContainer.insertAdjacentHTML('beforeend', newTask);
-      var checkbox = document.getElementById("checkbox-".concat(savedTasks[i].index));
-      checkbox.addEventListener('change', function listener() {
-        (0,_completed__WEBPACK_IMPORTED_MODULE_1__["default"])(savedTasks[i].index, this.checked);
-      });
-
-      if (savedTasks[i].completed) {
-        readyToClear = true;
-      }
-    };
-
-    for (var i = 0; i < savedTasks.length; i += 1) {
-      _loop(i);
-    }
-
-    if (readyToClear) {
-      clearButton.classList.remove('clear-notActive');
-      clearButton.classList.add('clear-active');
-    }
-  }
-};
-
-
 
 /***/ }),
 
@@ -784,12 +704,138 @@ module.exports = styleTagTransform;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ToDoList": () => (/* reexport safe */ _ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"]),
+/* harmony export */   "completedTasksCount": () => (/* binding */ completedTasksCount)
+/* harmony export */ });
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
+/* harmony import */ var _completed__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./completed */ "./src/completed.js");
+/* harmony import */ var _ToDoList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ToDoList */ "./src/ToDoList.js");
+/* eslint-disable import/no-cycle */
+
+
+
+var input = document.getElementById('addNewInput');
+var icon = document.getElementById('addNewIcon');
+var taskContainer = document.getElementById('tasks');
+var clearButton = document.getElementById('clear');
+/* eslint-disable import/no-mutable-exports */
+
+var completedTasksCount = 0;
+
+var maxIdValue = function maxIdValue(ToDoList) {
+  var ids = ToDoList.map(function (task) {
+    return task.index;
+  });
+  var sorted = ids.sort(function (a, b) {
+    return a - b;
+  });
+  return sorted[sorted.length - 1] + 1;
+};
+
+var addTaskToList = function addTaskToList() {
+  var validation = input.classList;
+  var id;
+
+  if (_ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].length) {
+    id = maxIdValue(_ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].currentTasks);
+  } else {
+    id = 0;
+  }
+
+  if (input.value.length) {
+    validation.remove('errorInput');
+    validation.add('new-input');
+    var newTask = "<div class=\"section\" id=\"".concat(id, "\">\n    <div class=\"checkbox\">\n      <input type=\"checkbox\" id=\"checkbox-").concat(id, "\"/>\n      <span id=\"task-").concat(id, "\">").concat(input.value, "</span>\n    </div>\n    <ion-icon name=\"ellipsis-vertical-outline\" class=\"icon\"></ion-icon>\n  </div>");
+    taskContainer.insertAdjacentHTML('beforeend', newTask);
+    var checkbox = document.getElementById("checkbox-".concat(id));
+    checkbox.addEventListener('change', function listener() {
+      (0,_completed__WEBPACK_IMPORTED_MODULE_1__["default"])(id, this.checked);
+    });
+    _ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].updateTasks = {
+      index: id,
+      description: input.value,
+      completed: false
+    };
+    localStorage.setItem('tasks', JSON.stringify(_ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].currentTasks));
+    input.value = '';
+    clearButton.style.display = 'flex';
+  } else {
+    validation.remove('new-input');
+    validation.add('errorInput');
+  }
+};
+
+var removeTaskFromList = function removeTaskFromList() {
+  var checkCompleted = _ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].currentTasks.filter(function (task) {
+    return task.completed === true;
+  });
+
+  if (checkCompleted.length) {
+    for (var i = 0; i < checkCompleted.length; i += 1) {
+      if (checkCompleted[i].completed) {
+        document.getElementById(checkCompleted[i].index).remove();
+      }
+    }
+
+    _ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].newArray = _ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].filter(function (task) {
+      return task.completed === false;
+    });
+    localStorage.setItem('tasks', JSON.stringify(_ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"]));
+    clearButton.classList.remove('clear-active');
+    clearButton.classList.add('clear-notActive');
+  }
+};
+
+window.onload = function () {
+  var readyToClear = false;
+  input.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+      addTaskToList();
+    }
+  });
+  icon.addEventListener('click', addTaskToList);
+  clearButton.addEventListener('click', removeTaskFromList);
+  var savedTasks = JSON.parse(localStorage.getItem('tasks'));
+
+  if (savedTasks && savedTasks.length) {
+    clearButton.style.display = 'flex';
+    _ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].newArray = savedTasks;
+
+    var _loop = function _loop(i) {
+      var newTask = "<div class=\"section\" id=\"".concat(savedTasks[i].index, "\">\n        <div class=\"checkbox\">\n          <input  ").concat(savedTasks[i].completed ? 'checked' : '', " type=\"checkbox\" id=\"checkbox-").concat(savedTasks[i].index, "\" />\n          <span  ").concat(savedTasks[i].completed ? "style='text-decoration: line-through; color: gray'" : '', " id=\"task-").concat(savedTasks[i].index, "\">").concat(savedTasks[i].description, "</span>\n        </div>\n        <ion-icon name=\"ellipsis-vertical-outline\" class=\"icon\"></ion-icon>\n      </div>");
+      taskContainer.insertAdjacentHTML('beforeend', newTask);
+      var checkbox = document.getElementById("checkbox-".concat(savedTasks[i].index));
+      checkbox.addEventListener('change', function listener() {
+        (0,_completed__WEBPACK_IMPORTED_MODULE_1__["default"])(savedTasks[i].index, this.checked);
+      });
+
+      if (savedTasks[i].completed) {
+        readyToClear = true;
+      }
+    };
+
+    for (var i = 0; i < savedTasks.length; i += 1) {
+      _loop(i);
+    }
+
+    if (readyToClear) {
+      clearButton.classList.remove('clear-notActive');
+      clearButton.classList.add('clear-active');
+    }
+  }
+};
+
+
+})();
+
 /******/ })()
 ;
 //# sourceMappingURL=index.bundle.js.map

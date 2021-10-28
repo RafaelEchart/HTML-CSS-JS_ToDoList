@@ -1,15 +1,11 @@
-/* eslint-disable import/no-cycle */
 import './style.css';
 import taskCompleted from './completed';
+import ToDoList from './ToDoList';
 
 const input = document.getElementById('addNewInput');
 const icon = document.getElementById('addNewIcon');
 const taskContainer = document.getElementById('tasks');
 const clearButton = document.getElementById('clear');
-
-/* eslint-disable import/no-mutable-exports */
-let ToDoList = [];
-const completedTasksCount = 0;
 
 const maxIdValue = (ToDoList) => {
   const ids = ToDoList.map((task) => task.index);
@@ -20,8 +16,8 @@ const maxIdValue = (ToDoList) => {
 const addTaskToList = () => {
   const validation = input.classList;
   let id;
-  if (ToDoList.length) {
-    id = maxIdValue(ToDoList);
+  if (ToDoList.currentTasks.length) {
+    id = maxIdValue(ToDoList.currentTasks);
   } else {
     id = 0;
   }
@@ -45,13 +41,13 @@ const addTaskToList = () => {
       taskCompleted(id, this.checked);
     });
 
-    ToDoList.push({
+    ToDoList.updateTasks = {
       index: id,
       description: input.value,
       completed: false,
-    });
+    };
 
-    localStorage.setItem('tasks', JSON.stringify(ToDoList));
+    localStorage.setItem('tasks', JSON.stringify(ToDoList.currentTasks));
 
     input.value = '';
     clearButton.style.display = 'flex';
@@ -62,7 +58,7 @@ const addTaskToList = () => {
 };
 
 const removeTaskFromList = () => {
-  const checkCompleted = ToDoList.filter((task) => task.completed === true);
+  const checkCompleted = ToDoList.currentTasks.filter((task) => task.completed === true);
 
   if (checkCompleted.length) {
     for (let i = 0; i < checkCompleted.length; i += 1) {
@@ -71,8 +67,9 @@ const removeTaskFromList = () => {
       }
     }
 
-    ToDoList = ToDoList.filter((task) => task.completed === false);
-    localStorage.setItem('tasks', JSON.stringify(ToDoList));
+    const newArray = ToDoList.currentTasks.filter((task) => task.completed === false);
+    ToDoList.newArray = newArray;
+    localStorage.setItem('tasks', JSON.stringify(ToDoList.currentTasks));
     clearButton.classList.remove('clear-active');
     clearButton.classList.add('clear-notActive');
   }
@@ -95,7 +92,7 @@ window.onload = () => {
   if (savedTasks && savedTasks.length) {
     clearButton.style.display = 'flex';
 
-    ToDoList = savedTasks;
+    ToDoList.newArray = savedTasks;
     for (let i = 0; i < savedTasks.length; i += 1) {
       const newTask = `<div class="section" id="${savedTasks[i].index}">
         <div class="checkbox">
@@ -122,5 +119,3 @@ window.onload = () => {
     }
   }
 };
-
-export { ToDoList, completedTasksCount };
