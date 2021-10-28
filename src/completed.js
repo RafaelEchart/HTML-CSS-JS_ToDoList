@@ -10,11 +10,6 @@ const taskCompleted = (id, checked) => {
   if (checked) {
     taskSelected.style.textDecoration = 'line-through';
     taskSelected.style.color = 'gray';
-    // ToDoList.currentTasks.forEach((task) => {
-    //   if (task.index === id) {
-    //     task.completed = true;
-    //   }
-    // });
 
     for (let i = 0; i < tasks.length; i += 1) {
       if (tasks[i].index === id) {
@@ -28,11 +23,6 @@ const taskCompleted = (id, checked) => {
   } else {
     taskSelected.style.textDecoration = 'none';
     taskSelected.style.color = 'black';
-    // ToDoList.forEach((task) => {
-    //   if (task.index === id) {
-    //     task.completed = false;
-    //   }
-    // });
     for (let i = 0; i < tasks.length; i += 1) {
       if (tasks[i].index === id) {
         tasks[i].completed = true;
