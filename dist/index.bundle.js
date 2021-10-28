@@ -43,7 +43,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _ToDoList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ToDoList */ "./src/ToDoList.js");
-/* eslint-disable import/no-cycle */
 
 var clearButton = document.getElementById('clear');
 
@@ -69,7 +68,7 @@ var taskCompleted = function taskCompleted(id, checked) {
       }
     }
 
-    _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].newArray(newArrayOfTasks);
+    _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].newArray = newArrayOfTasks;
   } else {
     taskSelected.style.textDecoration = 'none';
     taskSelected.style.color = 'black'; // ToDoList.forEach((task) => {
@@ -87,7 +86,7 @@ var taskCompleted = function taskCompleted(id, checked) {
       }
     }
 
-    _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].newArray(newArrayOfTasks);
+    _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].newArray = newArrayOfTasks;
   }
 
   localStorage.setItem('tasks', JSON.stringify(_ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].currentTasks));
@@ -711,14 +710,9 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ToDoList": () => (/* reexport safe */ _ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"]),
-/* harmony export */   "completedTasksCount": () => (/* binding */ completedTasksCount)
-/* harmony export */ });
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 /* harmony import */ var _completed__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./completed */ "./src/completed.js");
 /* harmony import */ var _ToDoList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ToDoList */ "./src/ToDoList.js");
-/* eslint-disable import/no-cycle */
 
 
 
@@ -726,9 +720,6 @@ var input = document.getElementById('addNewInput');
 var icon = document.getElementById('addNewIcon');
 var taskContainer = document.getElementById('tasks');
 var clearButton = document.getElementById('clear');
-/* eslint-disable import/no-mutable-exports */
-
-var completedTasksCount = 0;
 
 var maxIdValue = function maxIdValue(ToDoList) {
   var ids = ToDoList.map(function (task) {
@@ -744,7 +735,7 @@ var addTaskToList = function addTaskToList() {
   var validation = input.classList;
   var id;
 
-  if (_ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].length) {
+  if (_ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].currentTasks.length) {
     id = maxIdValue(_ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].currentTasks);
   } else {
     id = 0;
@@ -785,10 +776,11 @@ var removeTaskFromList = function removeTaskFromList() {
       }
     }
 
-    _ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].newArray = _ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].filter(function (task) {
+    var newArray = _ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].currentTasks.filter(function (task) {
       return task.completed === false;
     });
-    localStorage.setItem('tasks', JSON.stringify(_ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"]));
+    _ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].newArray = newArray;
+    localStorage.setItem('tasks', JSON.stringify(_ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].currentTasks));
     clearButton.classList.remove('clear-active');
     clearButton.classList.add('clear-notActive');
   }
@@ -832,8 +824,6 @@ window.onload = function () {
     }
   }
 };
-
-
 })();
 
 /******/ })()
