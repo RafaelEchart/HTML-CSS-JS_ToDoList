@@ -13,8 +13,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ "./src/index.js");
-/* eslint-disable import/extensions */
-
 /* eslint-disable import/no-cycle */
 
 var clearButton = document.getElementById('clear');
@@ -71,14 +69,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 /* harmony import */ var _completed__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./completed */ "./src/completed.js");
-function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
-
+/* eslint-disable import/no-cycle */
 
 
 var input = document.getElementById('addNewInput');
 var icon = document.getElementById('addNewIcon');
 var taskContainer = document.getElementById('tasks');
 var clearButton = document.getElementById('clear');
+/* eslint-disable import/no-mutable-exports */
+
 var ToDoList = [];
 var completedTasksCount = 0;
 
@@ -137,9 +136,9 @@ var removeTaskFromList = function removeTaskFromList() {
       }
     }
 
-    ToDoList.filter(function (task) {
+    ToDoList = ToDoList.filter(function (task) {
       return task.completed === false;
-    }), _readOnlyError("ToDoList");
+    });
     localStorage.setItem('tasks', JSON.stringify(ToDoList));
     clearButton.classList.remove('clear-active');
     clearButton.classList.add('clear-notActive');
@@ -159,7 +158,7 @@ window.onload = function () {
 
   if (savedTasks && savedTasks.length) {
     clearButton.style.display = 'flex';
-    savedTasks, _readOnlyError("ToDoList");
+    ToDoList = savedTasks;
 
     var _loop = function _loop(i) {
       var newTask = "<div class=\"section\" id=\"".concat(savedTasks[i].index, "\">\n        <div class=\"checkbox\">\n          <input  ").concat(savedTasks[i].completed ? 'checked' : '', " type=\"checkbox\" id=\"checkbox-").concat(savedTasks[i].index, "\" />\n          <span  ").concat(savedTasks[i].completed ? "style='text-decoration: line-through; color: gray'" : '', " id=\"task-").concat(savedTasks[i].index, "\">").concat(savedTasks[i].description, "</span>\n        </div>\n        <ion-icon name=\"ellipsis-vertical-outline\" class=\"icon\"></ion-icon>\n      </div>");
