@@ -3,7 +3,7 @@ import ToDoList from './ToDoList';
 const clearButton = document.getElementById('clear');
 
 const taskCompleted = (id, checked) => {
-  const taskSelected = document.getElementById(`task-${id}`);
+  const taskSelected = document.getElementById(`edit-task-${id}`);
   const tasks = ToDoList.currentTasks;
   const newArrayOfTasks = [];
 
@@ -25,7 +25,7 @@ const taskCompleted = (id, checked) => {
     taskSelected.style.color = 'black';
     for (let i = 0; i < tasks.length; i += 1) {
       if (tasks[i].index === id) {
-        tasks[i].completed = true;
+        tasks[i].completed = false;
         newArrayOfTasks.push(tasks[i]);
       } else {
         newArrayOfTasks.push(tasks[i]);

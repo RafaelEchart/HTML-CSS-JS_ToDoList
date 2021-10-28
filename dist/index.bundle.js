@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.card {\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  transition: 0.3s;\r\n  max-width: 450px;\r\n  width: 100%;\r\n}\r\n\r\n.card:hover {\r\n  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\r\n}\r\n\r\n.container {\r\n  padding: 2px 16px;\r\n}\r\n\r\n.section {\r\n  border-bottom: 1px solid lightgray;\r\n  height: 40px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n.title {\r\n  margin: 0 15px;\r\n  font-size: 18px;\r\n}\r\n\r\n.icon {\r\n  margin: 0 15px;\r\n  cursor: pointer;\r\n}\r\n\r\n.checkbox {\r\n  margin: 0 15px;\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.checkbox span {\r\n  font-family: sans-serif;\r\n  font-size: 14px;\r\n  margin: 0 5px;\r\n}\r\n\r\n.new-input {\r\n  border: none;\r\n  width: 95%;\r\n  font-size: 14px;\r\n  margin: 0 15px;\r\n  height: 35px;\r\n}\r\n\r\n.new-input::placeholder {\r\n  color: gray;\r\n  font-size: 14px;\r\n  font-style: italic;\r\n}\r\n\r\n.new-input:focus {\r\n  outline: none;\r\n}\r\n\r\n.errorInput {\r\n  border: none;\r\n  width: 95%;\r\n  font-size: 14px;\r\n  margin: 0 15px;\r\n  height: 35px;\r\n}\r\n\r\n.errorInput::placeholder {\r\n  color: red;\r\n  font-size: 14px;\r\n  font-style: italic;\r\n}\r\n\r\n.errorInput:focus {\r\n  outline: none;\r\n}\r\n\r\n.clear-notActive {\r\n  background-color: #ededed;\r\n  height: 40px;\r\n  display: none;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: not-allowed;\r\n}\r\n\r\n.clear-notActive span {\r\n  font-size: 14px;\r\n  color: #adadad;\r\n}\r\n\r\n.clear-active {\r\n  background-color: #006dcb;\r\n  height: 40px;\r\n  display: none;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: pointer;\r\n}\r\n\r\n.clear-active span {\r\n  font-size: 14px;\r\n  color: white;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,uBAAuB;AACzB;;AAEA;EACE,0CAA0C;EAC1C,gBAAgB;EAChB,gBAAgB;EAChB,WAAW;AACb;;AAEA;EACE,2CAA2C;AAC7C;;AAEA;EACE,iBAAiB;AACnB;;AAEA;EACE,kCAAkC;EAClC,YAAY;EACZ,aAAa;EACb,mBAAmB;EACnB,8BAA8B;AAChC;;AAEA;EACE,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,cAAc;EACd,aAAa;EACb,mBAAmB;AACrB;;AAEA;EACE,uBAAuB;EACvB,eAAe;EACf,aAAa;AACf;;AAEA;EACE,YAAY;EACZ,UAAU;EACV,eAAe;EACf,cAAc;EACd,YAAY;AACd;;AAEA;EACE,WAAW;EACX,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,YAAY;EACZ,UAAU;EACV,eAAe;EACf,cAAc;EACd,YAAY;AACd;;AAEA;EACE,UAAU;EACV,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,yBAAyB;EACzB,YAAY;EACZ,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,eAAe;EACf,cAAc;AAChB;;AAEA;EACE,yBAAyB;EACzB,YAAY;EACZ,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,eAAe;AACjB;;AAEA;EACE,eAAe;EACf,YAAY;AACd","sourcesContent":["body {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.card {\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  transition: 0.3s;\r\n  max-width: 450px;\r\n  width: 100%;\r\n}\r\n\r\n.card:hover {\r\n  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\r\n}\r\n\r\n.container {\r\n  padding: 2px 16px;\r\n}\r\n\r\n.section {\r\n  border-bottom: 1px solid lightgray;\r\n  height: 40px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n.title {\r\n  margin: 0 15px;\r\n  font-size: 18px;\r\n}\r\n\r\n.icon {\r\n  margin: 0 15px;\r\n  cursor: pointer;\r\n}\r\n\r\n.checkbox {\r\n  margin: 0 15px;\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.checkbox span {\r\n  font-family: sans-serif;\r\n  font-size: 14px;\r\n  margin: 0 5px;\r\n}\r\n\r\n.new-input {\r\n  border: none;\r\n  width: 95%;\r\n  font-size: 14px;\r\n  margin: 0 15px;\r\n  height: 35px;\r\n}\r\n\r\n.new-input::placeholder {\r\n  color: gray;\r\n  font-size: 14px;\r\n  font-style: italic;\r\n}\r\n\r\n.new-input:focus {\r\n  outline: none;\r\n}\r\n\r\n.errorInput {\r\n  border: none;\r\n  width: 95%;\r\n  font-size: 14px;\r\n  margin: 0 15px;\r\n  height: 35px;\r\n}\r\n\r\n.errorInput::placeholder {\r\n  color: red;\r\n  font-size: 14px;\r\n  font-style: italic;\r\n}\r\n\r\n.errorInput:focus {\r\n  outline: none;\r\n}\r\n\r\n.clear-notActive {\r\n  background-color: #ededed;\r\n  height: 40px;\r\n  display: none;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: not-allowed;\r\n}\r\n\r\n.clear-notActive span {\r\n  font-size: 14px;\r\n  color: #adadad;\r\n}\r\n\r\n.clear-active {\r\n  background-color: #006dcb;\r\n  height: 40px;\r\n  display: none;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: pointer;\r\n}\r\n\r\n.clear-active span {\r\n  font-size: 14px;\r\n  color: white;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.card {\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  transition: 0.3s;\r\n  max-width: 450px;\r\n  width: 100%;\r\n}\r\n\r\n.card:hover {\r\n  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\r\n}\r\n\r\n.container {\r\n  padding: 2px 16px;\r\n}\r\n\r\n.section {\r\n  border-bottom: 1px solid lightgray;\r\n  height: 40px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n.title {\r\n  margin: 0 15px;\r\n  font-size: 18px;\r\n}\r\n\r\n.icon {\r\n  margin: 0 15px;\r\n  cursor: pointer;\r\n}\r\n\r\n.checkbox {\r\n  margin: 0 15px;\r\n  display: flex;\r\n  align-items: center;\r\n  width: 75%;\r\n}\r\n\r\n.checkbox span {\r\n  font-family: sans-serif;\r\n  font-size: 14px;\r\n  margin: 0 5px;\r\n}\r\n\r\n.new-input {\r\n  border: none;\r\n  width: 95%;\r\n  font-size: 14px;\r\n  margin: 0 15px;\r\n  height: 35px;\r\n}\r\n\r\n.new-input::placeholder {\r\n  color: gray;\r\n  font-size: 14px;\r\n  font-style: italic;\r\n}\r\n\r\n.new-input:focus {\r\n  outline: none;\r\n}\r\n\r\n.errorInput {\r\n  border: none;\r\n  width: 95%;\r\n  font-size: 14px;\r\n  margin: 0 15px;\r\n  height: 35px;\r\n}\r\n\r\n.errorInput::placeholder {\r\n  color: red;\r\n  font-size: 14px;\r\n  font-style: italic;\r\n}\r\n\r\n.errorInput:focus {\r\n  outline: none;\r\n}\r\n\r\n.clear-notActive {\r\n  background-color: #ededed;\r\n  height: 40px;\r\n  display: none;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: not-allowed;\r\n}\r\n\r\n.clear-notActive span {\r\n  font-size: 14px;\r\n  color: #adadad;\r\n}\r\n\r\n.clear-active {\r\n  background-color: #006dcb;\r\n  height: 40px;\r\n  display: none;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: pointer;\r\n}\r\n\r\n.clear-active span {\r\n  font-size: 14px;\r\n  color: white;\r\n}\r\n\r\n.displayActive {\r\n  display: block !important;\r\n}\r\n\r\n.displayNotActive {\r\n  display: none !important;\r\n}\r\n\r\n.editInputBox {\r\n  background-color: #fffec8;\r\n}\r\n\r\n.backgroundEdit {\r\n  background-color: #fffec8;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,uBAAuB;AACzB;;AAEA;EACE,0CAA0C;EAC1C,gBAAgB;EAChB,gBAAgB;EAChB,WAAW;AACb;;AAEA;EACE,2CAA2C;AAC7C;;AAEA;EACE,iBAAiB;AACnB;;AAEA;EACE,kCAAkC;EAClC,YAAY;EACZ,aAAa;EACb,mBAAmB;EACnB,8BAA8B;AAChC;;AAEA;EACE,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,cAAc;EACd,aAAa;EACb,mBAAmB;EACnB,UAAU;AACZ;;AAEA;EACE,uBAAuB;EACvB,eAAe;EACf,aAAa;AACf;;AAEA;EACE,YAAY;EACZ,UAAU;EACV,eAAe;EACf,cAAc;EACd,YAAY;AACd;;AAEA;EACE,WAAW;EACX,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,YAAY;EACZ,UAAU;EACV,eAAe;EACf,cAAc;EACd,YAAY;AACd;;AAEA;EACE,UAAU;EACV,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,yBAAyB;EACzB,YAAY;EACZ,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,eAAe;EACf,cAAc;AAChB;;AAEA;EACE,yBAAyB;EACzB,YAAY;EACZ,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,eAAe;AACjB;;AAEA;EACE,eAAe;EACf,YAAY;AACd;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,wBAAwB;AAC1B;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,yBAAyB;AAC3B","sourcesContent":["body {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.card {\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  transition: 0.3s;\r\n  max-width: 450px;\r\n  width: 100%;\r\n}\r\n\r\n.card:hover {\r\n  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\r\n}\r\n\r\n.container {\r\n  padding: 2px 16px;\r\n}\r\n\r\n.section {\r\n  border-bottom: 1px solid lightgray;\r\n  height: 40px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n.title {\r\n  margin: 0 15px;\r\n  font-size: 18px;\r\n}\r\n\r\n.icon {\r\n  margin: 0 15px;\r\n  cursor: pointer;\r\n}\r\n\r\n.checkbox {\r\n  margin: 0 15px;\r\n  display: flex;\r\n  align-items: center;\r\n  width: 75%;\r\n}\r\n\r\n.checkbox span {\r\n  font-family: sans-serif;\r\n  font-size: 14px;\r\n  margin: 0 5px;\r\n}\r\n\r\n.new-input {\r\n  border: none;\r\n  width: 95%;\r\n  font-size: 14px;\r\n  margin: 0 15px;\r\n  height: 35px;\r\n}\r\n\r\n.new-input::placeholder {\r\n  color: gray;\r\n  font-size: 14px;\r\n  font-style: italic;\r\n}\r\n\r\n.new-input:focus {\r\n  outline: none;\r\n}\r\n\r\n.errorInput {\r\n  border: none;\r\n  width: 95%;\r\n  font-size: 14px;\r\n  margin: 0 15px;\r\n  height: 35px;\r\n}\r\n\r\n.errorInput::placeholder {\r\n  color: red;\r\n  font-size: 14px;\r\n  font-style: italic;\r\n}\r\n\r\n.errorInput:focus {\r\n  outline: none;\r\n}\r\n\r\n.clear-notActive {\r\n  background-color: #ededed;\r\n  height: 40px;\r\n  display: none;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: not-allowed;\r\n}\r\n\r\n.clear-notActive span {\r\n  font-size: 14px;\r\n  color: #adadad;\r\n}\r\n\r\n.clear-active {\r\n  background-color: #006dcb;\r\n  height: 40px;\r\n  display: none;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: pointer;\r\n}\r\n\r\n.clear-active span {\r\n  font-size: 14px;\r\n  color: white;\r\n}\r\n\r\n.displayActive {\r\n  display: block !important;\r\n}\r\n\r\n.displayNotActive {\r\n  display: none !important;\r\n}\r\n\r\n.editInputBox {\r\n  background-color: #fffec8;\r\n}\r\n\r\n.backgroundEdit {\r\n  background-color: #fffec8;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -562,10 +562,100 @@ const ToDoList = {
 
 /***/ }),
 
-/***/ "./src/completed.js":
-/*!**************************!*\
-  !*** ./src/completed.js ***!
-  \**************************/
+/***/ "./src/addNewTask.js":
+/*!***************************!*\
+  !*** ./src/addNewTask.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ToDoList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ToDoList */ "./src/ToDoList.js");
+/* harmony import */ var _completedTask__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./completedTask */ "./src/completedTask.js");
+/* harmony import */ var _editTask__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editTask */ "./src/editTask.js");
+/* harmony import */ var _removeOneTask__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./removeOneTask */ "./src/removeOneTask.js");
+
+
+
+
+
+const input = document.getElementById('addNewInput');
+const taskContainer = document.getElementById('tasks');
+const clearButton = document.getElementById('clear');
+
+const maxIdValue = (ToDoList) => {
+  const ids = ToDoList.map((task) => task.index);
+  const sorted = ids.sort((a, b) => a - b);
+  return sorted[sorted.length - 1] + 1;
+};
+
+const addTaskToList = () => {
+  const validation = input.classList;
+  let id;
+  if (_ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].currentTasks.length) {
+    id = maxIdValue(_ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].currentTasks);
+  } else {
+    id = 0;
+  }
+
+  if (input.value.length) {
+    validation.remove('errorInput');
+    validation.add('new-input');
+
+    const newTask = `<div class="section" id="${id}">
+        <div class="checkbox">
+          <input  type="checkbox" id="checkbox-${id}" />
+          <input type="text" value="${input.value}" id="edit-task-${id}" class="new-input" maxlength="30" />
+          </div>
+          <ion-icon name="ellipsis-vertical-outline" class="icon" id="edit-${id}"></ion-icon>
+
+        <ion-icon name="trash-outline" class="icon displayNotActive" id="remove-this-${id}"></ion-icon>
+
+      </div>`;
+
+    taskContainer.insertAdjacentHTML('beforeend', newTask);
+
+    const checkbox = document.getElementById(`checkbox-${id}`);
+    checkbox.addEventListener('change', function listener() {
+      (0,_completedTask__WEBPACK_IMPORTED_MODULE_1__["default"])(id, this.checked);
+    });
+
+    const editTaskIcon = document.getElementById(`edit-task-${id}`);
+    editTaskIcon.addEventListener('click', function edit() {
+      (0,_editTask__WEBPACK_IMPORTED_MODULE_2__["default"])(id, this.click);
+    });
+
+    const removeOne = document.getElementById(`remove-this-${id}`);
+    removeOne.addEventListener('click', function removeOne() {
+      (0,_removeOneTask__WEBPACK_IMPORTED_MODULE_3__["default"])(id, this.click);
+    });
+
+    _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].updateTasks = {
+      index: id,
+      description: input.value,
+      completed: false,
+    };
+
+    localStorage.setItem('tasks', JSON.stringify(_ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].currentTasks));
+
+    input.value = '';
+    clearButton.style.display = 'flex';
+  } else {
+    validation.remove('new-input');
+    validation.add('errorInput');
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addTaskToList);
+
+/***/ }),
+
+/***/ "./src/completedTask.js":
+/*!******************************!*\
+  !*** ./src/completedTask.js ***!
+  \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -578,18 +668,13 @@ __webpack_require__.r(__webpack_exports__);
 const clearButton = document.getElementById('clear');
 
 const taskCompleted = (id, checked) => {
-  const taskSelected = document.getElementById(`task-${id}`);
+  const taskSelected = document.getElementById(`edit-task-${id}`);
   const tasks = _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].currentTasks;
   const newArrayOfTasks = [];
 
   if (checked) {
     taskSelected.style.textDecoration = 'line-through';
     taskSelected.style.color = 'gray';
-    // ToDoList.currentTasks.forEach((task) => {
-    //   if (task.index === id) {
-    //     task.completed = true;
-    //   }
-    // });
 
     for (let i = 0; i < tasks.length; i += 1) {
       if (tasks[i].index === id) {
@@ -603,14 +688,9 @@ const taskCompleted = (id, checked) => {
   } else {
     taskSelected.style.textDecoration = 'none';
     taskSelected.style.color = 'black';
-    // ToDoList.forEach((task) => {
-    //   if (task.index === id) {
-    //     task.completed = false;
-    //   }
-    // });
     for (let i = 0; i < tasks.length; i += 1) {
       if (tasks[i].index === id) {
-        tasks[i].completed = true;
+        tasks[i].completed = false;
         newArrayOfTasks.push(tasks[i]);
       } else {
         newArrayOfTasks.push(tasks[i]);
@@ -632,6 +712,253 @@ const taskCompleted = (id, checked) => {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (taskCompleted);
+
+/***/ }),
+
+/***/ "./src/editTask.js":
+/*!*************************!*\
+  !*** ./src/editTask.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ToDoList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ToDoList */ "./src/ToDoList.js");
+
+
+const submitEditTask = (id) => {
+  const inputToSave = document.getElementById(`edit-task-${id}`);
+  const taskContainer = document.getElementById(id);
+  const taskEditButton = document.getElementById(`edit-${id}`);
+  const taskDeleteButton = document.getElementById(`remove-this-${id}`);
+
+  const newTask = inputToSave.value;
+
+  taskContainer.style.backgroundColor = 'white';
+  inputToSave.style.backgroundColor = 'white';
+
+  taskEditButton.classList.remove('displayNotActive');
+  taskEditButton.classList.add('displayActive');
+
+  taskDeleteButton.classList.remove('displayActive');
+  taskDeleteButton.classList.add('displayNotActive');
+
+  const updatedTasks = _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].currentTasks;
+  updatedTasks[id].description = newTask;
+
+  _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].newArray = updatedTasks;
+
+  localStorage.setItem('tasks', JSON.stringify(_ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].currentTasks));
+};
+
+const cleanSelectedTasks = () => {
+  const taskToClean = _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].currentTasks;
+  for (let i = 0; i < taskToClean.length; i += 1) {
+    const taskContainer = document.getElementById(taskToClean[i].index);
+    const taskInput = document.getElementById(
+      `edit-task-${taskToClean[i].index}`,
+    );
+    const taskEditButton = document.getElementById(
+      `edit-${taskToClean[i].index}`,
+    );
+    const taskDeleteButton = document.getElementById(
+      `remove-this-${taskToClean[i].index}`,
+    );
+
+    taskContainer.style.backgroundColor = 'white';
+    taskInput.style.backgroundColor = 'white';
+
+    taskEditButton.classList.add('displayActive');
+    taskEditButton.classList.remove('displayNotActive');
+
+    taskDeleteButton.classList.add('displayNotActive');
+    taskDeleteButton.classList.remove('displayActive');
+  }
+};
+
+const editTask = (id) => {
+  cleanSelectedTasks();
+  const taskContainerToEdit = document.getElementById(id);
+  const taskInputToEdit = document.getElementById(`edit-task-${id}`);
+  const taskEditButton = document.getElementById(`edit-${id}`);
+  const taskDeleteButton = document.getElementById(`remove-this-${id}`);
+
+  taskContainerToEdit.style.backgroundColor = '#fffec8';
+
+  taskEditButton.classList.remove('displayActive');
+  taskEditButton.classList.add('displayNotActive');
+
+  taskDeleteButton.classList.remove('displayNotActive');
+  taskDeleteButton.classList.add('displayActive');
+
+  taskInputToEdit.style.backgroundColor = '#fffec8';
+
+  taskInputToEdit.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      submitEditTask(id);
+    }
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (editTask);
+
+
+/***/ }),
+
+/***/ "./src/removeCompleteTasks.js":
+/*!************************************!*\
+  !*** ./src/removeCompleteTasks.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ToDoList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ToDoList */ "./src/ToDoList.js");
+/* harmony import */ var _completedTask__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./completedTask */ "./src/completedTask.js");
+/* harmony import */ var _editTask__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editTask */ "./src/editTask.js");
+/* harmony import */ var _removeOneTask__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./removeOneTask */ "./src/removeOneTask.js");
+
+
+
+
+
+const clearButton = document.getElementById('clear');
+const taskContainer = document.getElementById('tasks');
+
+const removeCompleteTasksFromList = () => {
+  const checkCompleted = _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].currentTasks.filter((task) => task.completed === true);
+
+  if (checkCompleted.length) {
+    const newArray = _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].currentTasks.filter((task) => task.completed === false);
+
+    taskContainer.innerHTML = '';
+    for (let i = 0; i < newArray.length; i += 1) {
+      newArray[i].index = i;
+
+      const newTask = `<div class="section" id="${i}">
+        <div class="checkbox">
+          <input  type="checkbox" id="checkbox-${i}" />
+          <input type="text" value="${newArray[i].description}" id="edit-task-${i}" class="new-input" maxlength="30" />
+          </div>
+          <ion-icon name="ellipsis-vertical-outline" class="icon" id="edit-${i}"></ion-icon>
+
+        <ion-icon name="trash-outline" class="icon displayNotActive" id="remove-this-${i}"></ion-icon>
+
+      </div>`;
+
+      taskContainer.insertAdjacentHTML('beforeend', newTask);
+
+      const checkbox = document.getElementById(`checkbox-${i}`);
+      checkbox.addEventListener('change', function listener() {
+        (0,_completedTask__WEBPACK_IMPORTED_MODULE_1__["default"])(i, this.checked);
+      });
+
+      const editTaskIcon = document.getElementById(`edit-task-${i}`);
+      editTaskIcon.addEventListener('click', function edit() {
+        (0,_editTask__WEBPACK_IMPORTED_MODULE_2__["default"])(i, this.click);
+      });
+
+      const removeOne = document.getElementById(`remove-this-${i}`);
+      removeOne.addEventListener('click', function removeOne() {
+        (0,_removeOneTask__WEBPACK_IMPORTED_MODULE_3__["default"])(i, this.click);
+      });
+    }
+    _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].newArray = newArray;
+    localStorage.setItem('tasks', JSON.stringify(_ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].currentTasks));
+    clearButton.classList.remove('clear-active');
+    clearButton.classList.add('clear-notActive');
+
+    if (!newArray.length) {
+      clearButton.style.display = 'none';
+    }
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (removeCompleteTasksFromList);
+
+/***/ }),
+
+/***/ "./src/removeOneTask.js":
+/*!******************************!*\
+  !*** ./src/removeOneTask.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ToDoList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ToDoList */ "./src/ToDoList.js");
+/* harmony import */ var _completedTask__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./completedTask */ "./src/completedTask.js");
+/* harmony import */ var _editTask__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editTask */ "./src/editTask.js");
+
+
+
+
+const clearButton = document.getElementById('clear');
+const taskContainer = document.getElementById('tasks');
+
+const removeOnetask = (id) => {
+  const taskToBeRemoved = document.getElementById(id);
+  taskToBeRemoved.remove();
+  const newTasks = _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].currentTasks.filter((task) => task.index !== id);
+
+  taskContainer.innerHTML = '';
+  for (let i = 0; i < newTasks.length; i += 1) {
+    newTasks[i].index = i;
+
+    const newTask = `<div id="${i}" class="section">
+      <div class="checkbox">
+        <input type="checkbox" ${newTasks[i].completed ? 'checked' : ''} id="checkbox-${i}"/>
+        <input type="text" value="${newTasks[i].description}" id="edit-task-${i}" ${newTasks[i].completed ? "style='text-decoration: line-through; color: gray'" : ''} class="new-input" maxlength="30" />
+      </div>
+      <ion-icon name="ellipsis-vertical-outline" class="icon" id="edit-${i}"></ion-icon>
+
+        <ion-icon name="trash-outline" class="icon displayNotActive" id="remove-this-${i}"></ion-icon>
+    </div>`;
+
+    taskContainer.insertAdjacentHTML('beforeend', newTask);
+
+    const checkbox = document.getElementById(`checkbox-${i}`);
+    checkbox.addEventListener('change', function listener() {
+      (0,_completedTask__WEBPACK_IMPORTED_MODULE_1__["default"])(i, this.checked);
+    });
+
+    const editTaskIcon = document.getElementById(`edit-task-${i}`);
+    editTaskIcon.addEventListener('click', function edit() {
+      (0,_editTask__WEBPACK_IMPORTED_MODULE_2__["default"])(i, this.click);
+    });
+
+    const removeOne = document.getElementById(`remove-this-${i}`);
+    removeOne.addEventListener('click', function removeOne() {
+      removeOnetask(i, this.click);
+    });
+  }
+
+  localStorage.setItem('tasks', JSON.stringify(_ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].currentTasks));
+
+  if (newTasks.length) {
+    _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].newArray = newTasks;
+    const checkCompletedTasks = newTasks.filter((task) => task.completed === true);
+    if (checkCompletedTasks.length) {
+      clearButton.classList.remove('clear-notactive');
+      clearButton.classList.add('clear-Active');
+    } else {
+      clearButton.classList.remove('clear-active');
+      clearButton.classList.add('clear-notActive');
+    }
+  } else {
+    _ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].newArray = [];
+    clearButton.style.display = 'none';
+  }
+  localStorage.setItem('tasks', JSON.stringify(_ToDoList__WEBPACK_IMPORTED_MODULE_0__["default"].currentTasks));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (removeOnetask);
 
 /***/ })
 
@@ -711,8 +1038,16 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
-/* harmony import */ var _completed__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./completed */ "./src/completed.js");
-/* harmony import */ var _ToDoList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ToDoList */ "./src/ToDoList.js");
+/* harmony import */ var _completedTask__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./completedTask */ "./src/completedTask.js");
+/* harmony import */ var _addNewTask__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./addNewTask */ "./src/addNewTask.js");
+/* harmony import */ var _ToDoList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ToDoList */ "./src/ToDoList.js");
+/* harmony import */ var _removeCompleteTasks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./removeCompleteTasks */ "./src/removeCompleteTasks.js");
+/* harmony import */ var _editTask__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editTask */ "./src/editTask.js");
+/* harmony import */ var _removeOneTask__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./removeOneTask */ "./src/removeOneTask.js");
+
+
+
+
 
 
 
@@ -722,106 +1057,51 @@ const icon = document.getElementById('addNewIcon');
 const taskContainer = document.getElementById('tasks');
 const clearButton = document.getElementById('clear');
 
-const maxIdValue = (ToDoList) => {
-  const ids = ToDoList.map((task) => task.index);
-  const sorted = ids.sort((a, b) => a - b);
-  return sorted[sorted.length - 1] + 1;
-};
-
-const addTaskToList = () => {
-  const validation = input.classList;
-  let id;
-  if (_ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].currentTasks.length) {
-    id = maxIdValue(_ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].currentTasks);
-  } else {
-    id = 0;
-  }
-
-  if (input.value.length) {
-    validation.remove('errorInput');
-    validation.add('new-input');
-
-    const newTask = `<div class="section" id="${id}">
-    <div class="checkbox">
-      <input type="checkbox" id="checkbox-${id}"/>
-      <span id="task-${id}">${input.value}</span>
-    </div>
-    <ion-icon name="ellipsis-vertical-outline" class="icon"></ion-icon>
-  </div>`;
-
-    taskContainer.insertAdjacentHTML('beforeend', newTask);
-
-    const checkbox = document.getElementById(`checkbox-${id}`);
-    checkbox.addEventListener('change', function listener() {
-      (0,_completed__WEBPACK_IMPORTED_MODULE_1__["default"])(id, this.checked);
-    });
-
-    _ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].updateTasks = {
-      index: id,
-      description: input.value,
-      completed: false,
-    };
-
-    localStorage.setItem('tasks', JSON.stringify(_ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].currentTasks));
-
-    input.value = '';
-    clearButton.style.display = 'flex';
-  } else {
-    validation.remove('new-input');
-    validation.add('errorInput');
-  }
-};
-
-const removeTaskFromList = () => {
-  const checkCompleted = _ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].currentTasks.filter((task) => task.completed === true);
-
-  if (checkCompleted.length) {
-    for (let i = 0; i < checkCompleted.length; i += 1) {
-      if (checkCompleted[i].completed) {
-        document.getElementById(checkCompleted[i].index).remove();
-      }
-    }
-
-    const newArray = _ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].currentTasks.filter((task) => task.completed === false);
-    _ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].newArray = newArray;
-    localStorage.setItem('tasks', JSON.stringify(_ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].currentTasks));
-    clearButton.classList.remove('clear-active');
-    clearButton.classList.add('clear-notActive');
-  }
-};
-
 window.onload = () => {
   let readyToClear = false;
   input.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-      addTaskToList();
+      (0,_addNewTask__WEBPACK_IMPORTED_MODULE_2__["default"])();
     }
   });
 
-  icon.addEventListener('click', addTaskToList);
+  icon.addEventListener('click', _addNewTask__WEBPACK_IMPORTED_MODULE_2__["default"]);
 
-  clearButton.addEventListener('click', removeTaskFromList);
+  clearButton.addEventListener('click', _removeCompleteTasks__WEBPACK_IMPORTED_MODULE_4__["default"]);
 
   const savedTasks = JSON.parse(localStorage.getItem('tasks'));
 
   if (savedTasks && savedTasks.length) {
     clearButton.style.display = 'flex';
 
-    _ToDoList__WEBPACK_IMPORTED_MODULE_2__["default"].newArray = savedTasks;
+    _ToDoList__WEBPACK_IMPORTED_MODULE_3__["default"].newArray = savedTasks;
     for (let i = 0; i < savedTasks.length; i += 1) {
       const newTask = `<div class="section" id="${savedTasks[i].index}">
         <div class="checkbox">
           <input  ${savedTasks[i].completed ? 'checked' : ''} type="checkbox" id="checkbox-${savedTasks[i].index}" />
-          <span  ${savedTasks[i].completed ? "style='text-decoration: line-through; color: gray'" : ''} id="task-${savedTasks[i].index}">${savedTasks[i].description}</span>
-        </div>
-        <ion-icon name="ellipsis-vertical-outline" class="icon"></ion-icon>
+          <input type="text" value="${savedTasks[i].description}" id="edit-task-${savedTasks[i].index}" ${savedTasks[i].completed ? "style='text-decoration: line-through; color: gray'" : ''} class="new-input" maxlength="30" />
+          </div>
+          <ion-icon name="ellipsis-vertical-outline" class="icon" id="edit-${savedTasks[i].index}"></ion-icon>
+
+        <ion-icon name="trash-outline" class="icon displayNotActive" id="remove-this-${savedTasks[i].index}"></ion-icon>
+
       </div>`;
 
       taskContainer.insertAdjacentHTML('beforeend', newTask);
 
       const checkbox = document.getElementById(`checkbox-${savedTasks[i].index}`);
       checkbox.addEventListener('change', function listener() {
-        (0,_completed__WEBPACK_IMPORTED_MODULE_1__["default"])(savedTasks[i].index, this.checked);
+        (0,_completedTask__WEBPACK_IMPORTED_MODULE_1__["default"])(savedTasks[i].index, this.checked);
+      });
+
+      const editTaskIcon = document.getElementById(`edit-task-${savedTasks[i].index}`);
+      editTaskIcon.addEventListener('click', function edit() {
+        (0,_editTask__WEBPACK_IMPORTED_MODULE_5__["default"])(savedTasks[i].index, this.click);
+      });
+
+      const removeOne = document.getElementById(`remove-this-${savedTasks[i].index}`);
+      removeOne.addEventListener('click', function removeOne() {
+        (0,_removeOneTask__WEBPACK_IMPORTED_MODULE_6__["default"])(savedTasks[i].index, this.click);
       });
 
       if (savedTasks[i].completed) {
