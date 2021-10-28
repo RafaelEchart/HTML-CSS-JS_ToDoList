@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://rafaelechart.github.io/ToDoList/)
+[Live Demo Link](https://rafaelechart.github.io/ToDoList/dist)
 
 
 ## Getting Started
