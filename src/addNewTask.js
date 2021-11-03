@@ -68,6 +68,7 @@ const addTaskToList = () => {
     validation.remove('new-input');
     validation.add('errorInput');
   }
+  return 1;
 };
 
 export default addTaskToList;
