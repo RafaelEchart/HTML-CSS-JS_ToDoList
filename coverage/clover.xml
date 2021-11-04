@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1636061007970" clover="3.2.0">
-  <project timestamp="1636061007970" name="All files">
+<coverage generated="1636061262542" clover="3.2.0">
+  <project timestamp="1636061262542" name="All files">
     <metrics statements="98" coveredstatements="91" conditionals="26" coveredconditionals="21" methods="15" coveredmethods="15" elements="139" coveredelements="127" complexity="0" loc="98" ncloc="98" packages="3" files="5" classes="5"/>
     <package name="src">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <file name="ToDoList.js" path="/Users/apple/Desktop/microverse-project/javascript-projects/Reafeal-todolist/ToDoList/src/ToDoList.js">
+      <file name="ToDoList.js" path="C:\Users\rafae\OneDrive\Documents\RafaelEchart\Learning\Microverse\Module 2\Personal\ToDoList\src\ToDoList.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="4" type="stmt"/>
         <line num="6" count="174" type="stmt"/>
@@ -14,7 +14,7 @@
     </package>
     <package name="src.tests.Part1">
       <metrics statements="62" coveredstatements="55" conditionals="18" coveredconditionals="13" methods="10" coveredmethods="10"/>
-      <file name="AddTask.js" path="/Users/apple/Desktop/microverse-project/javascript-projects/Reafeal-todolist/ToDoList/src/tests/Part1/AddTask.js">
+      <file name="AddTask.js" path="C:\Users\rafae\OneDrive\Documents\RafaelEchart\Learning\Microverse\Module 2\Personal\ToDoList\src\tests\Part1\AddTask.js">
         <metrics statements="20" coveredstatements="20" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
         <line num="3" count="4" type="stmt"/>
         <line num="4" count="4" type="stmt"/>
@@ -37,7 +37,7 @@
         <line num="50" count="41" type="stmt"/>
         <line num="53" count="7" type="stmt"/>
       </file>
-      <file name="removeTasks.js" path="/Users/apple/Desktop/microverse-project/javascript-projects/Reafeal-todolist/ToDoList/src/tests/Part1/removeTasks.js">
+      <file name="removeTasks.js" path="C:\Users\rafae\OneDrive\Documents\RafaelEchart\Learning\Microverse\Module 2\Personal\ToDoList\src\tests\Part1\removeTasks.js">
         <metrics statements="42" coveredstatements="35" conditionals="14" coveredconditionals="9" methods="6" coveredmethods="6"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
@@ -85,7 +85,7 @@
     </package>
     <package name="src.tests.Part2">
       <metrics statements="32" coveredstatements="32" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
-      <file name="completeTask.js" path="/Users/apple/Desktop/microverse-project/javascript-projects/Reafeal-todolist/ToDoList/src/tests/Part2/completeTask.js">
+      <file name="completeTask.js" path="C:\Users\rafae\OneDrive\Documents\RafaelEchart\Learning\Microverse\Module 2\Personal\ToDoList\src\tests\Part2\completeTask.js">
         <metrics statements="23" coveredstatements="23" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="8" type="stmt"/>
@@ -111,7 +111,7 @@
         <line num="32" count="3" type="stmt"/>
         <line num="34" count="8" type="stmt"/>
       </file>
-      <file name="editTask.js" path="/Users/apple/Desktop/microverse-project/javascript-projects/Reafeal-todolist/ToDoList/src/tests/Part2/editTask.js">
+      <file name="editTask.js" path="C:\Users\rafae\OneDrive\Documents\RafaelEchart\Learning\Microverse\Module 2\Personal\ToDoList\src\tests\Part2\editTask.js">
         <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="4" type="stmt"/>
@@ -120,8 +120,8 @@
         <line num="9" count="3" type="stmt"/>
         <line num="10" count="3" type="stmt"/>
         <line num="12" count="3" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="20" count="4" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
       </file>
     </package>
   </project>

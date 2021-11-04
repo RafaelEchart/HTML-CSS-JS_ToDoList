@@ -11,7 +11,6 @@ const submitEditTask = (id) => {
 
     ToDoList.newArray = updatedTasks;
 
-    // localStorage.setItem('tasks', JSON.stringify(ToDoList.currentTasks));
     Object.defineProperty(window, 'localStorage', {
       value: ToDoList.currentTasks,
     });
