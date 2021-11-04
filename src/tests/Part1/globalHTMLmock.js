@@ -17,14 +17,9 @@ const dom = new JSDOM(`<!DOCTYPE html><div class="card">
   
 </div>
 
-
-
 <div class="clear-notActive" id="clear">
   <span>Clear all completed</span>
 </div>
-
-
-
 
 </div>`);
 

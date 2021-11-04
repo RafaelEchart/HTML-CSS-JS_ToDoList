@@ -1,9 +1,10 @@
 import addTaskToList from './AddTask';
 import ToDoList from '../../ToDoList';
 
-describe('add and delete items', () => {
+describe('Add tasks to TasksList', () => {
   beforeEach(() => {
     ToDoList.newArray = [];
+    global.document.getElementById('tasks').innerHTML = '';
   });
 
   test('Add one new task from input (length > 0)', () => {
@@ -16,7 +17,7 @@ describe('add and delete items', () => {
     expect(addTaskToList()).toBe(undefined);
   });
 
-  test('Check taskListArray length, add only tasks with length > 0, this data is going to be saved in LocalStorage', () => {
+  test('Adding 2 valid tasks from input and one invalid task (length <= 0), saved toDoList array length === 2', () => {
     global.document.getElementById('addNewInput').value = 'newTask1';
     addTaskToList();
     global.document.getElementById('addNewInput').value = 'newTask2';
@@ -27,18 +28,43 @@ describe('add and delete items', () => {
     expect(ToDoList.currentTasks.length).toBe(2);
   });
 
-  // test('Check if the tasks are being added correctly into the DOM, check DOM taskList', () => {
-  //   global.document.getElementById('addNewInput').value = 'newTask1';
-  //   addTaskToList();
-  //   global.document.getElementById('addNewInput').value = 'newTask2';
-  //   addTaskToList();
-  //   global.document.getElementById('addNewInput').value = 'newTask3';
-  //   addTaskToList();
-  //   global.document.getElementById('addNewInput').value = '';
-  //   addTaskToList();
+  test('Added 3 valid tasks from input and one invalid task (length <= 0), localStorage length === 3, also toDoList saved array should be equal to localStorage saved array.', () => {
+    global.document.getElementById('addNewInput').value = 'newTask1';
+    addTaskToList();
+    global.document.getElementById('addNewInput').value = 'newTask2';
+    addTaskToList();
+    global.document.getElementById('addNewInput').value = 'newTask3';
+    addTaskToList();
+    global.document.getElementById('addNewInput').value = '';
+    addTaskToList();
 
-  //   const taskContainerTest = global.document.getElementById("tasks");
+    expect(ToDoList.currentTasks).toBe(window.localStorage);
+    expect(ToDoList.currentTasks.length).toBe(3);
+  });
 
-  //   expect(taskContainerTest).toHaveLength(3);
-  // });
+  test('Added 3 valid tasks and 3 invalid tasks (length <= 0), check the DOM for only 3 tasks elements (each task element starts with the class="section")', () => {
+    global.document.getElementById('addNewInput').value = 'newTask1';
+    addTaskToList();
+    global.document.getElementById('addNewInput').value = 'newTask2';
+    addTaskToList();
+    global.document.getElementById('addNewInput').value = '';
+    addTaskToList();
+    global.document.getElementById('addNewInput').value = 'newTask4';
+    addTaskToList();
+    global.document.getElementById('addNewInput').value = '';
+    addTaskToList();
+    global.document.getElementById('addNewInput').value = '';
+    addTaskToList();
+
+    const taskContainer = global.document.getElementById('tasks');
+    const taskCounter = taskContainer.getElementsByClassName('section');
+
+    // In this case taskCounter.length should be 3 because
+    // We are adding only 3 valid tasks
+    expect(ToDoList.currentTasks.length).toBe(taskCounter.length);
+    expect(window.localStorage.length).toBe(taskCounter.length);
+
+    expect(ToDoList.currentTasks.length).toBe(3);
+    expect(window.localStorage.length).toBe(3);
+  });
 });

@@ -10,7 +10,6 @@ const maxIdValue = (ToDoList) => {
 };
 
 const addTaskToList = () => {
-  console.log('input value', input.value);
   const validation = input.classList;
   let id;
   if (ToDoList.currentTasks.length) {
@@ -43,6 +42,10 @@ const addTaskToList = () => {
     };
 
     // localStorage.setItem('tasks', JSON.stringify(ToDoList.currentTasks));
+
+    Object.defineProperty(window, 'localStorage', {
+      value: ToDoList.currentTasks,
+    });
 
     return input.value;
   }
