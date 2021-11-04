@@ -31,7 +31,10 @@ const taskCompleted = (id, checked) => {
     }
     ToDoList.newArray = newArrayOfTasks;
   }
-//   localStorage.setItem('tasks', JSON.stringify(ToDoList.currentTasks))
+  //   localStorage.setItem('tasks', JSON.stringify(ToDoList.currentTasks))
+  Object.defineProperty(window, 'localStorage', {
+    value: ToDoList.currentTasks,
+  });
 };
 
 export default taskCompleted;

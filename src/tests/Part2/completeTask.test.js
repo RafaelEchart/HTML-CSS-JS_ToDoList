@@ -56,4 +56,17 @@ describe('Completed tasks from TasksList', () => {
 
     expect(taskSelected).toBe(true);
   });
+
+  test('Add 3 valid task and change the complete status of the second one to completed(true), checking appropriate saved in localStorage and ToDoList Array', () => {
+    global.document.getElementById('addNewInput').value = 'newTask1';
+    addTaskToList();
+    global.document.getElementById('addNewInput').value = 'newTask2';
+    addTaskToList();
+    global.document.getElementById('addNewInput').value = 'newTask3';
+    addTaskToList();
+
+    taskCompleted(1, true);
+
+    expect(ToDoList.currentTasks).toBe(window.localStorage);
+  });
 });
