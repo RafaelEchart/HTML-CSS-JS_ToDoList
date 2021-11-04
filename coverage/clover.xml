@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1636058925599" clover="3.2.0">
-  <project timestamp="1636058925599" name="All files">
-    <metrics statements="97" coveredstatements="90" conditionals="26" coveredconditionals="21" methods="15" coveredmethods="15" elements="138" coveredelements="126" complexity="0" loc="97" ncloc="97" packages="3" files="5" classes="5"/>
+<coverage generated="1636061007970" clover="3.2.0">
+  <project timestamp="1636061007970" name="All files">
+    <metrics statements="98" coveredstatements="91" conditionals="26" coveredconditionals="21" methods="15" coveredmethods="15" elements="139" coveredelements="127" complexity="0" loc="98" ncloc="98" packages="3" files="5" classes="5"/>
     <package name="src">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="ToDoList.js" path="/Users/apple/Desktop/microverse-project/javascript-projects/Reafeal-todolist/ToDoList/src/ToDoList.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="4" type="stmt"/>
-        <line num="6" count="156" type="stmt"/>
-        <line num="10" count="38" type="stmt"/>
-        <line num="14" count="33" type="stmt"/>
+        <line num="6" count="174" type="stmt"/>
+        <line num="10" count="41" type="stmt"/>
+        <line num="14" count="35" type="stmt"/>
       </file>
     </package>
     <package name="src.tests.Part1">
@@ -19,22 +19,22 @@
         <line num="3" count="4" type="stmt"/>
         <line num="4" count="4" type="stmt"/>
         <line num="6" count="4" type="stmt"/>
-        <line num="7" count="47" type="stmt"/>
-        <line num="8" count="28" type="stmt"/>
-        <line num="9" count="28" type="stmt"/>
+        <line num="7" count="50" type="stmt"/>
+        <line num="8" count="30" type="stmt"/>
+        <line num="9" count="30" type="stmt"/>
         <line num="12" count="4" type="stmt"/>
-        <line num="13" count="45" type="stmt"/>
-        <line num="15" count="45" type="cond" truecount="2" falsecount="0"/>
-        <line num="16" count="28" type="stmt"/>
-        <line num="18" count="17" type="stmt"/>
-        <line num="21" count="45" type="cond" truecount="2" falsecount="0"/>
-        <line num="22" count="38" type="stmt"/>
-        <line num="23" count="38" type="stmt"/>
-        <line num="25" count="38" type="stmt"/>
-        <line num="36" count="38" type="stmt"/>
-        <line num="38" count="38" type="stmt"/>
-        <line num="46" count="38" type="stmt"/>
-        <line num="50" count="38" type="stmt"/>
+        <line num="13" count="48" type="stmt"/>
+        <line num="15" count="48" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="30" type="stmt"/>
+        <line num="18" count="18" type="stmt"/>
+        <line num="21" count="48" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="41" type="stmt"/>
+        <line num="23" count="41" type="stmt"/>
+        <line num="25" count="41" type="stmt"/>
+        <line num="36" count="41" type="stmt"/>
+        <line num="38" count="41" type="stmt"/>
+        <line num="46" count="41" type="stmt"/>
+        <line num="50" count="41" type="stmt"/>
         <line num="53" count="7" type="stmt"/>
       </file>
       <file name="removeTasks.js" path="/Users/apple/Desktop/microverse-project/javascript-projects/Reafeal-todolist/ToDoList/src/tests/Part1/removeTasks.js">
@@ -84,23 +84,23 @@
       </file>
     </package>
     <package name="src.tests.Part2">
-      <metrics statements="31" coveredstatements="31" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
+      <metrics statements="32" coveredstatements="32" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
       <file name="completeTask.js" path="/Users/apple/Desktop/microverse-project/javascript-projects/Reafeal-todolist/ToDoList/src/tests/Part2/completeTask.js">
-        <metrics statements="22" coveredstatements="22" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <metrics statements="23" coveredstatements="23" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="4" count="7" type="stmt"/>
-        <line num="5" count="7" type="stmt"/>
-        <line num="6" count="7" type="stmt"/>
-        <line num="7" count="7" type="stmt"/>
-        <line num="8" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="13" count="12" type="cond" truecount="2" falsecount="0"/>
-        <line num="14" count="4" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
-        <line num="17" count="8" type="stmt"/>
-        <line num="20" count="4" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="5" count="8" type="stmt"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="8" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="15" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="17" count="10" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
         <line num="22" count="3" type="stmt"/>
         <line num="23" count="3" type="stmt"/>
         <line num="24" count="3" type="stmt"/>
@@ -109,10 +109,11 @@
         <line num="27" count="3" type="stmt"/>
         <line num="29" count="9" type="stmt"/>
         <line num="32" count="3" type="stmt"/>
+        <line num="34" count="8" type="stmt"/>
       </file>
       <file name="editTask.js" path="/Users/apple/Desktop/microverse-project/javascript-projects/Reafeal-todolist/ToDoList/src/tests/Part2/editTask.js">
         <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="3" count="2" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
         <line num="4" count="4" type="stmt"/>
         <line num="6" count="4" type="stmt"/>
         <line num="8" count="4" type="cond" truecount="2" falsecount="0"/>
