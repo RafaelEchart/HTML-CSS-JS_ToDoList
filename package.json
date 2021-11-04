@@ -9,7 +9,7 @@
   "description": "ToDoList Microverse RafaelEchart",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "build": "webpack",
     "start": "webpack-dev-server --open",
     "watch": "webpack --watch"

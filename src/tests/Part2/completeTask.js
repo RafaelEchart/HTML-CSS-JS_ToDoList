@@ -2,9 +2,9 @@ import ToDoList from '../../ToDoList';
 
 const taskCompleted = (id, checked) => {
   const taskSelected = global.document.getElementById(`edit-task-${id}`);
+  global.document.getElementById(`checkbox-${id}`).checked = true
   const tasks = ToDoList.currentTasks;
   const newArrayOfTasks = [];
-
   if (checked) {
     taskSelected.style.textDecoration = 'line-through';
     taskSelected.style.color = 'gray';

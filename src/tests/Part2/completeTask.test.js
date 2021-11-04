@@ -3,13 +3,63 @@ import addTaskToList from '../Part1/AddTask';
 
 import ToDoList from '../../ToDoList';
 
+import taskCompleted from './completeTask'
+import { expect } from '@jest/globals';
+
 describe('Completed tasks from TasksList', () => {
   beforeEach(() => {
     ToDoList.newArray = [];
     global.document.getElementById('tasks').innerHTML = '';
   });
 
-  test('', () => {
+  test('Add 2 valide tasks and change the complete status of the second one to completed(true),toDoList array must have the updated information', () => {
+    global.document.getElementById('addNewInput').value = 'newTask1';
+    addTaskToList();
+    global.document.getElementById('addNewInput').value = 'newTask2';
+    addTaskToList();
+    taskCompleted(0, true)
+    expect(ToDoList.currentTasks[0].completed).toBe(true)
+    
+  });
 
+  test('Add 1 valide tasks and check if by default the completed task is false', () => {
+    global.document.getElementById('addNewInput').value = 'newTask1';
+    addTaskToList();
+    expect(ToDoList.currentTasks[0].completed).toBe(false)
+  });
+
+
+
+  test('Add 2 valide tasks and change the complete status of the second one to completed(true),toDoList array must have the updated information', () => {
+    global.document.getElementById('addNewInput').value = 'newTask1';
+    addTaskToList();
+    global.document.getElementById('addNewInput').value = 'newTask2';
+    addTaskToList();
+    global.document.getElementById('addNewInput').value = 'newTask3';
+    addTaskToList();
+    global.document.getElementById('addNewInput').value = 'newTask4';
+    addTaskToList();
+    taskCompleted(0, true)
+    taskCompleted(1, false)
+    taskCompleted(2, true)
+    taskCompleted(3, false)
+    taskCompleted(2, false)
+
+    expect(ToDoList.currentTasks[0].completed).toBe(true)
+    expect(ToDoList.currentTasks[1].completed).toBe(false)
+    expect(ToDoList.currentTasks[2].completed).toBe(false)
+    expect(ToDoList.currentTasks[3].completed).toBe(false) 
+  });
+
+  test('Add 2 valide tasks and check check if the DOM input value was succesfully changed', () => {
+    global.document.getElementById('addNewInput').value = 'newTask1';
+    addTaskToList();
+    global.document.getElementById('addNewInput').value = 'newTask2';
+    addTaskToList();
+    taskCompleted(1, true)
+    const taskSelected = global.document.getElementById(`checkbox-${1}`).checked;
+
+    expect(taskSelected).toBe(true)
+    
   });
 });
