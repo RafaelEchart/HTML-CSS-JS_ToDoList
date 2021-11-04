@@ -31,13 +31,12 @@ describe('Remove only one element when call to function removeOnetask', () => {
     global.document.getElementById('addNewInput').value = 'NewTask3';
     addTaskToList();
 
-    removeOnetask(1)
+    removeOnetask(1);
 
     const taskContainer = global.document.getElementById('tasks');
     const taskCounter = taskContainer.getElementsByClassName('section');
 
     expect(taskCounter.length).toBe(2);
-
   });
 });
 
@@ -75,7 +74,6 @@ describe('Remove all completed tasks when call to function removeCompleteTasksFr
     addTaskToList();
     global.document.getElementById('addNewInput').value = 'NewTask3';
     addTaskToList();
-  
 
     const toDoArray = ToDoList.currentTasks;
     toDoArray[0].completed = true;
@@ -86,9 +84,7 @@ describe('Remove all completed tasks when call to function removeCompleteTasksFr
     const taskContainer = global.document.getElementById('tasks');
     const taskCounter = taskContainer.getElementsByClassName('section');
 
-
     expect(taskCounter.length).toBe(1);
-
   });
 
   test('Remove all completed when toDoList array length is 0 return undefined', () => {
