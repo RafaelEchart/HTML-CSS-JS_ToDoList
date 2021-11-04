@@ -36,7 +36,7 @@ describe('Remove only one element when call to function removeOnetask', () => {
     const taskContainer = global.document.getElementById('tasks');
     const taskCounter = taskContainer.getElementsByClassName('section');
 
-    expect(taskCounter.length).toBe(2);
+    expect(taskCounter.length).toEqual(2);
   });
 });
 
@@ -46,31 +46,33 @@ describe('Remove all completed tasks when call to function removeCompleteTasksFr
     global.document.getElementById('tasks').innerHTML = '';
   });
 
-  test('Add 4 valid tasks, then set first 3 to completed === true, and delete all completed, toDoArray and localStorage length should be 1', () => {
-    global.document.getElementById('addNewInput').value = 'NewTask1';
+  test('Add 4 valid tasks, then set last 2 to completed === true, and delete all completed, toDoArray and localStorage length should be 2', () => {
+    global.document.getElementById("addNewInput").value = "NewTask1";
     addTaskToList();
-    global.document.getElementById('addNewInput').value = 'NewTask2';
+    global.document.getElementById("addNewInput").value = 'NewTask2';
     addTaskToList();
-    global.document.getElementById('addNewInput').value = 'NewTask3';
+    global.document.getElementById("addNewInput").value = 'NewTask3';
     addTaskToList();
-    global.document.getElementById('addNewInput').value = 'NewTask4';
+    global.document.getElementById("addNewInput").value = 'NewTask4';
     addTaskToList();
 
     const toDoArray = ToDoList.currentTasks;
-    toDoArray[0].completed = true;
+    toDoArray[0].completed = false;
     toDoArray[1].completed = true;
     toDoArray[2].completed = true;
 
     removeCompleteTasksFromList();
 
-    expect(ToDoList.currentTasks.length).toBe(1);
-    expect(window.localStorage.length).toBe(1);
+    expect(ToDoList.currentTasks.length).toEqual(2);
+    expect(window.localStorage.length).toEqual(2);
   });
 
   test('Add 3 valid tasks, then set first 2 to completed === true, and delete all completed, Check the DOM for only two tasks painted in the DOM (each task element starts with the class="section")', () => {
     global.document.getElementById('addNewInput').value = 'NewTask1';
     addTaskToList();
     global.document.getElementById('addNewInput').value = 'NewTask2';
+    addTaskToList();
+    global.document.getElementById('addNewInput').value = 'NewTask3';
     addTaskToList();
     global.document.getElementById('addNewInput').value = 'NewTask3';
     addTaskToList();
@@ -84,7 +86,7 @@ describe('Remove all completed tasks when call to function removeCompleteTasksFr
     const taskContainer = global.document.getElementById('tasks');
     const taskCounter = taskContainer.getElementsByClassName('section');
 
-    expect(taskCounter.length).toBe(1);
+    expect(taskCounter.length).toEqual(2);
   });
 
   test('Remove all completed when toDoList array length is 0 return undefined', () => {
