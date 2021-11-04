@@ -1,10 +1,8 @@
-import editTask from './editTask';
 import addTaskToList from '../Part1/AddTask';
 
 import ToDoList from '../../ToDoList';
 
-import taskCompleted from './completeTask'
-import { expect } from '@jest/globals';
+import taskCompleted from './completeTask';
 
 describe('Completed tasks from TasksList', () => {
   beforeEach(() => {
@@ -12,25 +10,22 @@ describe('Completed tasks from TasksList', () => {
     global.document.getElementById('tasks').innerHTML = '';
   });
 
-  test('Add 2 valide tasks and change the complete status of the second one to completed(true),toDoList array must have the updated information', () => {
+  test('Add 2 valid tasks and change the complete status of the second one to completed(true),toDoList array must have the updated information', () => {
     global.document.getElementById('addNewInput').value = 'newTask1';
     addTaskToList();
     global.document.getElementById('addNewInput').value = 'newTask2';
     addTaskToList();
-    taskCompleted(0, true)
-    expect(ToDoList.currentTasks[0].completed).toBe(true)
-    
+    taskCompleted(0, true);
+    expect(ToDoList.currentTasks[0].completed).toBe(true);
   });
 
-  test('Add 1 valide tasks and check if by default the completed task is false', () => {
+  test('Add 1 valid tasks and check if by default the completed task is false', () => {
     global.document.getElementById('addNewInput').value = 'newTask1';
     addTaskToList();
-    expect(ToDoList.currentTasks[0].completed).toBe(false)
+    expect(ToDoList.currentTasks[0].completed).toBe(false);
   });
 
-
-
-  test('Add 2 valide tasks and change the complete status of the second one to completed(true),toDoList array must have the updated information', () => {
+  test('Add 2 valid tasks and change the complete status of the second one to completed(true),toDoList array must have the updated information', () => {
     global.document.getElementById('addNewInput').value = 'newTask1';
     addTaskToList();
     global.document.getElementById('addNewInput').value = 'newTask2';
@@ -39,27 +34,26 @@ describe('Completed tasks from TasksList', () => {
     addTaskToList();
     global.document.getElementById('addNewInput').value = 'newTask4';
     addTaskToList();
-    taskCompleted(0, true)
-    taskCompleted(1, false)
-    taskCompleted(2, true)
-    taskCompleted(3, false)
-    taskCompleted(2, false)
+    taskCompleted(0, true);
+    taskCompleted(1, false);
+    taskCompleted(2, true);
+    taskCompleted(3, false);
+    taskCompleted(2, false);
 
-    expect(ToDoList.currentTasks[0].completed).toBe(true)
-    expect(ToDoList.currentTasks[1].completed).toBe(false)
-    expect(ToDoList.currentTasks[2].completed).toBe(false)
-    expect(ToDoList.currentTasks[3].completed).toBe(false) 
+    expect(ToDoList.currentTasks[0].completed).toBe(true);
+    expect(ToDoList.currentTasks[1].completed).toBe(false);
+    expect(ToDoList.currentTasks[2].completed).toBe(false);
+    expect(ToDoList.currentTasks[3].completed).toBe(false);
   });
 
-  test('Add 2 valide tasks and check check if the DOM input value was succesfully changed', () => {
+  test('Add 2 valid tasks and check check if the DOM input value was succesfully changed', () => {
     global.document.getElementById('addNewInput').value = 'newTask1';
     addTaskToList();
     global.document.getElementById('addNewInput').value = 'newTask2';
     addTaskToList();
-    taskCompleted(1, true)
+    taskCompleted(1, true);
     const taskSelected = global.document.getElementById(`checkbox-${1}`).checked;
 
-    expect(taskSelected).toBe(true)
-    
+    expect(taskSelected).toBe(true);
   });
 });
