@@ -89,7 +89,21 @@ describe('Remove all completed tasks when call to function removeCompleteTasksFr
     expect(taskCounter.length).toEqual(2);
   });
 
+  test('Add 1 valid tasks, then check if it is defined, Check the DOM for only one tasks printed in the DOM (each task element starts with the class="section")', () => {
+    global.document.getElementById('addNewInput').value = 'NewTask1';
+    addTaskToList();
+    
+    const toDoArray = ToDoList.currentTasks;
+    
+    removeCompleteTasksFromList();
+
+    const taskContainer = global.document.getElementById('tasks');
+    const taskCounter = taskContainer.getElementsByClassName('section');
+
+    expect(taskCounter.length).not.toBeUndefined();
+  });
+
   test('Remove all completed when toDoList array length is 0 return undefined', () => {
-    expect(removeCompleteTasksFromList()).toBe(undefined);
+    expect(removeCompleteTasksFromList()).toBeUndefined;
   });
 });
