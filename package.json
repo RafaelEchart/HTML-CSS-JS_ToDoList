@@ -2,7 +2,7 @@
   "name": "ToDoList",
   "jest": {
     "setupFiles": [
-      "./src/tests/part1/globalHTMLmock.js"
+      "./src/tests/globalHTMLmock.js"
     ]
   },
   "version": "1.0.0",
