@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://rafaelechart.github.io/ToDoList/dist)
+[Live Demo Link](https://rafaelechart.github.io/HTML-CSS-JS_ToDoList/dist)
 
 
 ## Getting Started
@@ -31,7 +31,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-- git clone https://github.com/RafaelEchart/ToDoList.git
+- git clone https://github.com/RafaelEchart/HTML-CSS-JS_ToDoList.git
 - cd ToDoList
 
 ### Install
