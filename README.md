@@ -32,7 +32,7 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
 - git clone https://github.com/RafaelEchart/HTML-CSS-JS_ToDoList.git
-- cd ToDoList
+- cd HTML-CSS-JS_ToDoList
 
 ### Install
 
